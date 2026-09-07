@@ -1,20 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// Import global CSS for NativeWind v4
+import "./global.css";
+import { Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View className="flex-1 items-center justify-center bg-gray-100">
+      <Text className="text-2xl font-bold text-green-700">AgroGuard AI</Text>
+      <Text className="text-base text-gray-600 mt-2">Tailwind CSS is working!</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
