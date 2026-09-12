@@ -22,20 +22,23 @@ export default function App() {
       <SafeAreaView className="flex-1 bg-black">
         <StatusBar style="light" />
         
-        <View className="flex-1 bg-gray-100 items-center justify-center">
-          <Text className="text-2xl font-bold text-green-700">
+        {/* Added px-6 for side spacing */}
+        <View className="flex-1 bg-gray-100 items-center justify-center px-6">
+          
+          {/* Added text-center to align multi-line text perfectly */}
+          <Text className="text-3xl font-bold text-green-700 text-center leading-tight">
             {t('welcomeMessage')}
           </Text>
-          <Text className="text-base text-gray-600 mt-2 text-center px-4">
+          
+          <Text className="text-base text-gray-600 mt-4 text-center">
             {t('subtitle')}
           </Text>
 
-          {/* Language Toggle Button */}
           <TouchableOpacity 
-            className="mt-8 bg-green-700 px-6 py-3 rounded-full"
+            className="mt-10 bg-green-700 px-8 py-3 rounded-full shadow-sm"
             onPress={toggleLanguage}
           >
-            <Text className="text-white font-semibold">
+            <Text className="text-white font-semibold text-lg">
               {t('changeLanguage')}
             </Text>
           </TouchableOpacity>
