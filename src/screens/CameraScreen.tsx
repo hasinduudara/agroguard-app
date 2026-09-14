@@ -67,9 +67,14 @@ export default function CameraScreen({ navigation }: any) {
       // Show the result in an alert for now
       Alert.alert("Analysis Complete", result.final_advice);
       
-    } catch (error) {
+    } catch (error: any) {
       setIsLoading(false);
-      Alert.alert("Error", "Failed to connect to the backend. Is the server running?");
+      
+      // Extract the exact error message sent from the FastAPI backend
+      const errorMessage = error.response?.data?.detail || "An unexpected error occurred.";
+      
+      // Show the actual backend error in the alert
+      Alert.alert("Backend Error", errorMessage);
     }
   }
 

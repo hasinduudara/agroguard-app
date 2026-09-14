@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-// IMPORTANT: Replace this IP with your computer's actual IPv4 address
-// You can find this by typing 'ipconfig' in your Windows Command Prompt
-const BASE_URL = 'http://192.168.8.170:8000'; // I saw this IP in your Expo Go screenshot
+// Base URL pointing to the FastAPI server
+const BASE_URL = 'http://192.168.8.170:8000'; 
 
-// Function to send the image and language to the FastAPI backend
 export async function analyzeCropImage(imageUri: string, language: string) {
   const formData = new FormData();
 
@@ -24,8 +22,8 @@ export async function analyzeCropImage(imageUri: string, language: string) {
   formData.append('language', language);
 
   try {
-    // Send POST request to the backend
-    const response = await axios.post(`${BASE_URL}/analyze-crop`, formData, {
+    // Send POST request to the backend with the correct full path
+    const response = await axios.post(`${BASE_URL}/api/app/analyze-crop`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
