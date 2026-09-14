@@ -5,10 +5,11 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// Import screens and i18n
+// Import local screens and i18n configuration
 import './src/locales/i18n';
 import HomeScreen from './src/screens/HomeScreen';
 import CameraScreen from './src/screens/CameraScreen';
+import ResultScreen from './src/screens/ResultScreen';
 
 // Initialize the stack navigator
 const Stack = createNativeStackNavigator();
@@ -23,12 +24,14 @@ export default function App() {
           <Stack.Navigator 
             initialRouteName="Home"
             screenOptions={{
-              headerShown: false, // Hide the default header for custom UI
-              contentStyle: { backgroundColor: '#f3f4f6' } // tailwind gray-100
+              headerShown: false, // Hide the default header
+              contentStyle: { backgroundColor: '#f3f4f6' } // Default background color
             }}
           >
+            {/* Register all application screens here */}
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Camera" component={CameraScreen} />
+            <Stack.Screen name="Result" component={ResultScreen} />
           </Stack.Navigator>
         </NavigationContainer>
         
