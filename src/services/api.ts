@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL pointing to the FastAPI server
-const BASE_URL = 'http://192.168.8.170:8000'; 
+const BASE_URL = 'http://192.168.1.3:8000'; 
 
 export async function analyzeCropImage(imageUris: string[], textQuery: string, language: string) {
   const formData = new FormData();
